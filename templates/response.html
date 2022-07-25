@@ -1,0 +1,31 @@
+<h3>{{numrows}} Records Found</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Employee Code</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    {% for row in employee %}
+    <tbody>
+        <tr>
+            <td>
+                <p>{{row.name}}</p>
+            </td>
+            <td>{{row.emp_code}}</td>
+            <td>{{row.email}}</td>
+            <td>
+                <a href="/edit/{{row.id}}">
+                
+                    <i class='bx bxs-edit' ></i>
+                </a>
+              <a href="/delete/{{row.id}}"><i class='bx bx-trash'onclick="return confirm('Are You Sure For Delete?')"></i></a>
+               
+            </td>
+        </tr>
+        
+    </tbody>
+    {% endfor %}
+</table>

@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{% block body %} 
+		<nav>
+			<i class='bx bx-menu' ></i>
+			
+			<form action="search6" method="post" >
+				<div class="form-input">
+					<input type="text" placeholder="Search..." name="search">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="{{ url_for('static', filename = 'img/people.png') }}">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Attendance</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a class="active" href="{{url_for('attendance')}}">Attendance</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a href="#"> Add Attendance</a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+            <div class="container">
+                <div id="header">
+                    <div id="link">
+                    </div>
+                </div>
+                <!-- <div id="subhead">
+                    <button type="button"><i class="fa fa-bars"></i> Employee List</button>
+                    <button type="button"><i class="fa fa-bars"></i> Disciplinary List</button>
+                </div> -->
+                <div id="form">
+                    <div id="formtitle">
+                        <div class="title">
+                            <i class="fa fa-user-plus"></i>
+                            <span> Add Attendance</span>
+                        </div>
+                    </div>
+                    <form class="row"action="{{url_for('attendance_add')}}" method="post">
+                        <div class="col">
+                            <div class="col-3 ">
+                                <label for="inputname" class="form-label">Employee's Name</label><br>
+                                <input type="text" class="form-control "required
+                                 placeholder="Employee's Name"
+                                    aria-label="name"name='name'>
+                            </div>
+                            <div class="col-3">
+                                <label for="inputEmail" class="form-label">Date</label><br>
+                                <input type="text" class="form-control"
+                                    aria-label="Email"name='date' id="currentDate" readonly>
+                            </div>
+                            <div class="col-3 ">
+                                <label for="inputWebsite" class="form-label">Sign in Time</label><br>
+                                <input type="text" class="form-control "
+                                    aria-label="Website"name='in_time' id="currentTime" readonly>
+                            </div>
+                            <!-- <div class="col-3 ">
+                                <label for="inputWebsite" class="form-label">Sign out Time</label><br>
+                                <input type="time" class="form-control "
+                                    aria-label="Website" name='out_time'>
+                            </div> -->
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="success"><i class="fa fa-check"></i> Submit</button>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <script>
+            var today = new Date();
+            var time = today.getHours() + ":" + today.getMinutes();
+              document.getElementById("currentTime").value = time;
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+              document.getElementById("currentDate").value = date;
+        </script>
+{% endblock %}        

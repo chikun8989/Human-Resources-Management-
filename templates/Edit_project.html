@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block body %}
+<nav>
+	<i class='bx bx-menu' ></i>
+	
+	
+	<form >
+	</form>
+	<input type="checkbox" id="switch-mode" hidden>
+	<label for="switch-mode" class="switch-mode"></label>
+	<a href="#" class="notification">
+		<i class='bx bxs-bell' ></i>
+		<span class="num">8</span>
+	</a>
+	<a href="#" class="profile">
+		<img src="{{ url_for('static', filename = 'img/people.png') }}">
+	</a>
+</nav>
+        <main>
+            <div class="head-title">
+				<div class="left">
+					<h1>Project</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a class="active" href="{{url_for('project')}}">Project List</a>
+						</li>
+						<li><i class='bx bx-chevron-right'></i></li>
+						<li>
+							<a href="#">Project details</a>
+						</li>
+					</ul>
+				</div>
+				<!-- <a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a> -->
+			</div>
+            <div class="container">
+                <!-- <div id="header">
+                    <i class="fa fa-user-circle-o"></i>
+                    <span> Mr. Name</span>
+                </div> -->
+                <div class="personalinfo">
+                    <div class="ttl">
+                        <p>Project Info</p>
+                    </div>
+                    <div class="personal">
+                        
+                        <div class="info">
+                            <form class="form" action="/update1/{{project.id}}" method="POST">
+                                <div class="col-3 ">
+                                    <label for="inputname" class="form-label">Project's Title</label><br>
+                                    <input type="text"value="{{project.project_name}}" 
+                                        aria-label="name" name="project_name" >
+                                </div>
+                                <div class="col-3">
+                                    <label for="inputEmail" class="form-label">Start Date</label><br>
+                                    <input type="date" class="form-control" value="{{project.start_date}}"
+                                        aria-label="Email" name="start_date">
+                                </div>
+                                
+                                <div class="col-3 ">
+                                    <label for="inputWebsite" class="form-label">End Date</label><br>
+                                    <input type="date" class="form-control" value="{{project.end_date}}"name='end_date'>
+                                </div>
+                                <div class="col-3">
+                                    <label for="inputDept" class="form-label">Project's Status</label><br>
+
+                                    <select id="inputDept" class="form-select" name="status">
+                                        <option hidden>{{project.status}}</option>
+                                        <option>process</option>
+                                        <option>Complete</option>
+                                        <option>Pending</option>
+                                        
+                                    </select>
+                                
+                                </div>
+                                <div class="col-3 ">
+                                    <label for="inputWebsite" class="form-label">Project's Details</label><br>
+                                    <textarea name='details'>{{project.details}}</textarea>
+                                </div>
+                                
+                                <div class="col">
+                                    <button type="submit" class="success"><i class="fa fa-check"></i> Update</button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+        </main>
+{% endblock %}

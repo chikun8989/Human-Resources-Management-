@@ -1,0 +1,177 @@
+{% extends "layout.html" %}
+{% block body %}
+<nav>
+	<i class='bx bx-menu' ></i>
+	
+	
+	<form>
+		
+	</form>
+	<input type="checkbox" id="switch-mode" hidden>
+	<label for="switch-mode" class="switch-mode"></label>
+	<a href="#" class="notification">
+		<i class='bx bxs-bell' ></i>
+		<span class="num">8</span>
+	</a>
+	<a href="#" class="profile">
+		<img src="{{ url_for('static', filename = 'img/people.png') }}">
+	</a>
+</nav>
+        <main>
+            <div class="head-title">
+				<div class="left">
+					<div id="header">
+                        <i class="fa fa-user-circle-o"></i>
+                        <span> {{nm.name}}</span>
+                    </div>
+					<ul class="breadcrumb">
+						<li>
+							<a class="active" href="{{url_for('employee')}}">Employee List</a>
+						</li>
+						<li><i class='bx bx-chevron-right'></i></li>
+						<li>
+							<a href="#">Employee Profile</a>
+						</li>
+					</ul>
+				</div>
+				<!-- <a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a> -->
+			</div>
+            <div class="container">
+                <!-- <div id="header">
+                    <i class="fa fa-user-circle-o"></i>
+                    <span> Mr. Name</span>
+                </div> -->
+                <div class="personalinfo">
+                    <div class="ttl">
+                        <p>Personal Info</p>
+                    </div>
+                    <div class="personal">
+                        <div class="profilearea">
+                            <!-- <img src="./img/babu.jpg" alt="DP" class="dp"> -->
+                            <img src="/static/images/{{pro.files}}" alt="DP" class="dp">
+                            <p class="name">{{nm.name}}</p>
+                            <!-- <p class="name">{{nm.name}}</p> -->
+                            <p class="position">{{rl.designation}}</p>
+                            <div class="sl">
+                                <div class="em">
+                                    <p class="l">Email Address</p>
+                                    <p class="t">{{em.email}}</p>
+                                </div>
+                                <div class="em">
+                                    <p class="l">Phone</p>
+                                    <p class="t">{{pn.phone}}</p>
+                                </div>
+                                <div class="em">
+                                    <p class="l">Social Profile</p>
+                                    <div class="socialpro">
+                                        <a href="https://www.facebook.com/" target="_blank"><i class="bx bxl-facebook-square"></i></a>
+                                        <a href="https://github.com/" target="_blank"><i class="bx bxl-github"></i></a>
+                                        <a href="https://www.linkedin.com/signup" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                                        <a href="https://www.google.com/" target="_blank"><i class="bx bxl-google"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <form class="form" action="/update/{{employee.id}}" method="POST" >
+                                <div>
+                                    <label for="">Employee Code</label><br>
+                                    <input type="text" value="{{employee.emp_code}}" class="c-1" name='emp_code'>
+                                </div>
+                                <div>
+                                    <label for="">Name</label><br>
+                                    <input type="text" value="{{employee.name}}" class="c-1"name='name'>
+                                </div>
+                                <!-- <div>
+                                    <label for="">Last Name</label><br>
+                                    <input type="text" value="Name" class="c-1">
+                                </div> -->
+                                <div>
+                                    <label for="">Department</label><br>
+                                    <select class="c-1"name='department'>
+                                        <option hidden>{{employee.department}} </option>
+                                    <option>Cse</option>
+                                    <option>Mechanical</option>
+                                    <option>EEE</option>
+                                    <option>Civil</option>
+                                </select>
+                                </div>
+                                <div>
+                                    <label for="">Designation</label><br>
+                                    <select class="c-1"name='designation'>
+                                        <option hidden>{{employee.designation}} </option>
+                                        <option>Professor</option>
+                                        <option>HOD</option>
+                                        <option>Assistant Professor</option>
+                                        <option>Non-Teaching</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="">Gender</label><br>
+                                    <select class="c-1"name='gender'>
+                                        <option hidden>{{employee.gender}}</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="">Blood Group</label><br>
+                                    <select class="c-1"name='bg'>
+                                        <option hidden>{{employee.bg}}</option>
+                                    <option>A+</option>
+                                    <option>A-</option>
+                                    <option>B+</option>
+                                    <option>B-</option>
+                                    <option>AB+</option>
+                                    <option>AB-</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
+                                </select>
+                                </div>
+                                <div class="col-3">
+                                    <label for="">Role</label><br>
+                                    <select class="c-1" name='role'>
+                                        <option hidden>{{employee.role}}</option>
+                                        <option>Admin</option>
+                                        <option>Employee</option>
+                                        
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="">Contact Number</label><br>
+                                    <input type="text" value="{{employee.phone}}" class="c-1" name='phone'>
+                                </div>
+                                <div>
+                                    <label for="">Email Address</label><br>
+                                    <input type="email" value="{{employee.email}}" class="c-1"name='email'>
+                                </div>
+                                <div>
+                                    <label for="">Date of Birth</label><br>
+                                    <input type="date" value="{{employee.dob}}" class="c-1"name='dob'>
+                                </div>
+                                <div>
+                                    <label for="">Date of Joining</label><br>
+                                    <input type="date" value="{{employee.date_of_joining}}" class="c-1"name='date_of_joining'>
+                                </div>
+                                <!-- <div>
+                                    <label for="">Date of Leaving</label><br>
+                                    <input type="date" value="2022-06-14" class="c-1">
+                                </div> -->
+                                <div>
+                                    <label for="">Image</label><br>
+                                    <input type="file"  class="c-1" style="padding-top: 3px;"name='files' value="{{employee.files}}">
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="success"><i class="fa fa-check"></i> Update</button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+        </main>
+{% endblock %}

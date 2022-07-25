@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block body %}
+<nav>
+	<i class='bx bx-menu' ></i>
+	
+	
+	<form action="search1" method="post" >
+		<div class="form-input">
+			<input type="text" placeholder="Search..." name="search">
+			<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+		</div>
+	</form>
+	<input type="checkbox" id="switch-mode" hidden>
+	<label for="switch-mode" class="switch-mode"></label>
+	<a href="#" class="notification">
+		<i class='bx bxs-bell' ></i>
+		<span class="num">8</span>
+	</a>
+	<a href="#" class="profile">
+		<img src="{{ url_for('static', filename = 'img/people.png') }}">
+	</a>
+</nav>
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Department</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a class="active" href="{{url_for('organization')}}">Home</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="{{url_for('department')}}">Department Details</a>
+						</li>
+                        <li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a href="#">Add Department Details</a>
+						</li>
+					</ul>
+				</div>
+                </div>
+                <div id="form">
+                    <div id="formtitle">
+                        <div class="title">
+                            <i class="fa fa-user-plus"></i>
+                            <span> Add New Department</span>
+                        </div>
+                    </div>
+                    <form class="row" action="{{url_for('department_add')}}" method="post">
+                        <div class="col">
+                            <div class="col-3 ">
+                                <label for="inputname" class="form-label">Department's Name</label><br>
+                                <input type="text" class="form-control " placeholder="Department Name"
+                                    aria-label="name" name="dname">
+                            </div>
+                            <div class="col-3">
+                                <label for="inputEmail" class="form-label">Department's Head</label><br>
+                                <input type="text" class="form-control" placeholder="Department Head"
+                                    aria-label="Email" name="dhead">
+                            </div>
+                            <div class="col-3 ">
+                                <label for="inputWebsite" class="form-label">Location</label><br>
+                                <input type="text" class="form-control " placeholder="Location"
+                                    aria-label="Website" name="location">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="success"><i class="fa fa-check"></i> Save</button>
+                            <button type="reset" class="danger">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        {% endblock %}

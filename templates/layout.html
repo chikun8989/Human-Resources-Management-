@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}">
+	<!-- Bootstarp -->
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+	<!-- Bootstrap -->
+
+	<title>AdminHub</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<navbar id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bx-building-house'></i>
+			<span class="text">HRM SYSTEM</span>
+		</a>
+		<ul class="side-menu top">
+    
+			<li class="" >
+				<a href="{{url_for('dashboard')}}">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+            
+			<li>
+				<a href="{{url_for('organization')}}">
+					<i class='bx bx-sitemap' ></i>
+					<span class="text">Organization</span>
+				</a>
+			</li>
+			<li>
+				<a href="{{url_for('employee')}}">
+					<i class='bx bxs-id-card
+					' ></i>
+					<span class="text">Employee</span>
+				</a>
+			</li>
+			<li>
+				<a href="{{url_for('project')}}">
+					<i class='bx bxs-rocket' ></i>
+					<span class="text">Project</span>
+				</a>
+			</li>
+			<li>
+				<a href="{{url_for('attendance')}}">
+					<i class='bx bxs-user-check' ></i>
+					<span class="text">Attendance</span>
+				</a>
+			</li>
+			<li>
+
+				<a href="{{url_for('payroll')}}">
+					<i class='bx bx-money' ></i>
+					<span class="text">Payroll</span>
+				</a>
+			</li>
+			
+		
+			<li>
+				<a href="{{url_for('logout')}}" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+            
+		</ul>
+		<!-- <ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul> -->
+	</navbar>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<!-- <nav>
+			<i class='bx bx-menu' ></i>
+			
+			
+			<form >
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="{{ url_for('static', filename = 'img/people.png') }}">
+			</a>
+		</nav> -->
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		{% block body %} {% endblock %}
+
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+	<script>
+		const body = document.querySelector('body');
+const button = document.querySelector('#switch-mode');
+function toggleDark() {
+if (body.classList.contains('dark')) {
+body.classList.remove('dark');
+localStorage.setItem("theme", "light");
+button.innerHTML = "Turn on dark mode";
+} else {
+body.classList.add('dark');
+localStorage.setItem("theme", "dark");
+button.innerHTML = "Turn off dark mode";
+}
+}
+
+if (localStorage.getItem("theme") === "dark") {
+body.classList.add('dark');
+button.innerHTML = "Turn off dark mode";
+}
+
+document.querySelector('#switch-mode').addEventListener('click', toggleDark);
+	</script>
+
+	<script type="text/javascript" src="{{url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>
