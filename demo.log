@@ -1,0 +1,28 @@
+2022-06-22 10:08:31,472 DEBUG root MainThread : this is debug message
+2022-06-22 10:08:31,472 INFO root MainThread : this is info message
+2022-06-22 10:08:31,472 WARNING root MainThread : this is warning message
+2022-06-22 10:08:31,472 ERROR root MainThread : this is error message
+2022-06-22 10:08:31,472 CRITICAL root MainThread : this is critical message
+2022-06-22 10:08:31,592 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-06-22 10:08:31,600 INFO werkzeug MainThread :  * Restarting with stat
+2022-06-22 10:08:32,226 DEBUG root MainThread : this is debug message
+2022-06-22 10:08:32,226 INFO root MainThread : this is info message
+2022-06-22 10:08:32,226 WARNING root MainThread : this is warning message
+2022-06-22 10:08:32,226 ERROR root MainThread : this is error message
+2022-06-22 10:08:32,226 CRITICAL root MainThread : this is critical message
+2022-06-22 10:08:32,250 WARNING werkzeug MainThread :  * Debugger is active!
+2022-06-22 10:08:32,250 INFO werkzeug MainThread :  * Debugger PIN: 199-234-809
+2022-06-22 10:08:52,577 DEBUG root MainThread : this is debug message
+2022-06-22 10:08:52,577 INFO root MainThread : this is info message
+2022-06-22 10:08:52,577 WARNING root MainThread : this is warning message
+2022-06-22 10:08:52,577 ERROR root MainThread : this is error message
+2022-06-22 10:08:52,577 CRITICAL root MainThread : this is critical message
+2022-06-22 10:08:52,644 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-06-22 10:08:52,676 INFO werkzeug MainThread :  * Restarting with stat
+2022-06-22 10:08:53,129 DEBUG root MainThread : this is debug message
+2022-06-22 10:08:53,129 INFO root MainThread : this is info message
+2022-06-22 10:08:53,129 WARNING root MainThread : this is warning message
+2022-06-22 10:08:53,129 ERROR root MainThread : this is error message
+2022-06-22 10:08:53,129 CRITICAL root MainThread : this is critical message
+2022-06-22 10:08:53,160 WARNING werkzeug MainThread :  * Debugger is active!
+2022-06-22 10:08:53,160 INFO werkzeug MainThread :  * Debugger PIN: 199-234-809
